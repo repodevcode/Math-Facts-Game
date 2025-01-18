@@ -1,11 +1,11 @@
 # MathIFun - *An interactive math facts game\!*
 
 ## LEARN
-![MathIFun Interface](https://github.com/repodevcode/Math-Facts-Game/blob/main/FOR%20README/Learn.png)
+<img src="https://github.com/repodevcode/Math-Facts-Game/blob/main/FOR%20README/Learn.png" alt="MathIFun Interface" style="width:5000px;"/>
+
 
 ## RELAX (with breaks in between)
-![Rock, Paper, Scissors](https://github.com/repodevcode/Math-Facts-Game/blob/main/FOR%20README/Relax.png)
-
+<img src="https://github.com/repodevcode/Math-Facts-Game/blob/main/FOR%20README/Relax.png" alt="Rock, paper, scissors" style="width:5000px;"/>
 
 ## BE PROUD!
-![Trophy](https://github.com/repodevcode/Math-Facts-Game/blob/main/FOR%20README/BeProud.png)
+<img src="https://github.com/repodevcode/Math-Facts-Game/blob/main/FOR%20README/BeProud.png" alt="Trophy" style="width:5000px;"/>
