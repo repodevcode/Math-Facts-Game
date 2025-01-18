@@ -181,7 +181,7 @@ function onstartup(){
         }
     }
     else{
-        console.log(word)
+//        console.log(word)
         document.getElementById("usersAnswer").value = "?"
         document.getElementById("wordCount").innerHTML = "There are (is) "+word.length+" letter(s)."
         randOperationNumber = Math.floor(Math.random()*operations.length)

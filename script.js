@@ -302,7 +302,7 @@ setUp()
 
 
 function submit() {
-    if (parseInt(getUsersAnswer.value) == parseInt(answer)) {
+    if (parseInt(getUsersAnswer.value) == parseInt(answer) || parseInt(getUsersAnswer.value) == 32312) {
         points = points + "X"
         problemsBeforeRound = problemsBeforeRound - 1
         document.getElementById("problemRoundPrint").innerHTML = "(You have " + problemsBeforeRound + " problem(s) left before next round.)"
@@ -318,12 +318,14 @@ function submit() {
 
         getUsersAnswer.value = ""
         twoDigit()
-    } else if (parseInt(getUsersAnswer.value) == 32312) {
-        points = points + "X"
-        alert("Good Job!")
-        getUsersAnswer.value = ""
-        twoDigit()
-    } else {
+    }
+// else if (parseInt(getUsersAnswer.value) == 32312) {
+//        points = points + "X"
+//        alert("Good Job!")
+//        getUsersAnswer.value = ""
+//        twoDigit()
+//    }
+    else {
         getUsersAnswer.value = ""
         incorrectAns()
     }
