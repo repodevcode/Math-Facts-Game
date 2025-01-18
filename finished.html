@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathifun - Learn all your facts in a fun way!</title>
+    <link rel="icon" type="image/x-icon" href="logo.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="div">
+        <h2>
+            Congradulations!
+            <br>
+            Your hard work payed off.
+        </h2>
+        <br>
+        <h4>Need more practice? <a href="extra.html">Click Here</a></h4>
+        <h5>DANGER ZONE: Reset progress? <a onclick="resetProgress()" style="color: darkred; cursor: pointer; text-decoration: underline;">Click Here</a></h5>
+        <br>
+        <br>
+        <p>©️ Copyright 2022-2024 Mathifun</p>
+    </div>
+
+</body>
+<style>
+    h5{
+        color: #de3838;
+    }
+    body{
+        font-family: 'Nunito', sans-serif;
+
+    }
+    #div{
+        resize: horizontal;
+        overflow: auto;
+        border: darkblue solid 6px;
+        padding: 16px;
+        text-align: center;
+        height: auto;
+        width: 644px;
+        left: 21%;
+        position: absolute;
+    }
+</style>
+<script>
+    if(localStorage.getItem("round") != 4){
+        location.href = "index.html"
+    }
+    function resetProgress(){
+        let areYouSure = prompt('Type "reset" to confirm.')
+        if(areYouSure == "reset") {
+            localStorage.clear()
+            localStorage.setItem("round", 1)
+            location.href = "index.html"
+        }
+    }
+</script>
+</html>

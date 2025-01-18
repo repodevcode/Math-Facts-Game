@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathifun - Learn all your facts in a fun way!</title>
+    <link rel="icon" type="image/x-icon" href="logo.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="allDiv">
+    <h1>Mathifun</h1>
+    <p id="pointsPrint"></p>
+    <p id="roundPrint">Round: 1</p>
+    <p style="position: relative; top: -11px;"><i><b id="problemRoundPrint">(You have 20 problems left before next
+        round.)</b></i></p>
+    <input type="input" id="problemNumScentence" onselectstart="return false" oncut="return false" oncopy="return false"
+           onpaste="return false" ondrag="return false" ondrop="return false" readonly/> <input value="?"
+                                                                                                onclick="val()"
+                                                                                                type="input"
+                                                                                                id="usersAnswer"/>
+    <p><b><i id="forDivisionOnly"></i></b></p>
+    <br>
+    <br>
+    <input value="Submit" type="button" onmouseleave="mouseOverEventStart('mouseleave')"
+           onmouseover="mouseOverEventStart('mouseover')" onclick="submit()" class="usersAnswerButton"/>
+    <br>
+    <br>
+    <p>©️ Copyright 2022-2024 Mathifun</p>
+</div>
+<div id="rockPaperScissors">
+    <h1>Rock paper scissors game!</h1>
+    <h2>Playing vs <img width="34px" src="botPic.png" draggable="false"/></h2>
+
+    <button class="rockPaperScissorsBtns" id="rock" onclick="choseObjRPS(this)">🪨</button>
+    <button class="rockPaperScissorsBtns" id="paper" onclick="choseObjRPS(this)">📃</button>
+    <button class="rockPaperScissorsBtns" id="scissors" onclick="choseObjRPS(this)">✂️</button>
+    <h1>Have a lucky game!
+    </h1>
+    <h1 id="resultPrintRPS">ROCK PAPER SCISSORS SHOOT!</h1><br><br>
+</div>
+<div id="feedback" style="visibility: hidden">
+    <h1>✔️Correct!</h1>
+    <h3>Keep it up!</h3>
+</div>
+
+
+</body>
+<script src="script.js"></script>
+<style>
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @keyframes fadeOutAnimation {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    .correctAnswer{
+        animation: fadeInAnimation ease 0.5s;
+        background: lightgreen;
+        width: 311px;
+        text-align: center;
+        height: 115px;
+        border: #328832 7px solid;
+        left: 415px;
+        position: absolute;
+        top: 169px;
+    }
+    .incorrectAnswer{
+        animation: fadeInAnimation ease 0.5s;
+        background: #ffe8e8;
+        width: 311px;
+        text-align: center;
+        height: 115px;
+        border: #d30000 7px solid;
+        left: 415px;
+        position: absolute;
+        top: 169px;
+    }
+    .usersAnswerButton {
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .usersAnswerButton:hover {
+        background-color: #2980b9;
+    }
+
+    .rockPaperScissorsBtns {
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 50px;
+        transition: background-color 0.3s ease;
+    }
+
+    .rockPaperScissorsBtns:hover {
+        background-color: #2980b9;
+    }
+
+    body {
+        font-family: 'Nunito', sans-serif;
+
+    }
+
+    #problemNumScentence {
+        background-color: #eeeeee;
+        cursor: not-allowed;
+        width: 12%;
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    
+    #usersAnswer {
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 12px;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    #allDiv {
+        border: darkblue solid 6px;
+        padding: 16px;
+        text-align: center;
+        height: auto;
+        width: 644px;
+        left: 21%;
+        position: absolute;
+        resize: horizontal;
+        overflow: auto;
+    }
+
+    #rockPaperScissors {
+        background: linear-gradient(to right, #ffa0a0 25%, #ffea9d 25%, #ffcc02 50%, #e84f47 50%, #e84f47 75%, #65c1ac 75%);
+        visibility: hidden;
+        border: darkblue solid 6px;
+        padding: 16px;
+        text-align: center;
+        height: auto;
+        width: 644px;
+        left: 21%;
+        position: absolute;
+        background-color: white;
+    }
+
+
+</style>
+
+</html>

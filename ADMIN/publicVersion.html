@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathifun - Learn all your facts in a fun way!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="allDiv">
+        <h1>Mathifun</h1>
+        <p id="pointsPrint"></p>
+        <p id="roundPrint">Round: 1</p>
+        <p style="position: relative; top: -11px;"><i><b id="problemRoundPrint">(You have 20 problems left before next round.)</b></i></p>
+        <input type="input" id="problemNumScentence" readonly />    <input value="?" onclick="val()" type="input" id="usersAnswer" />
+        <p><b><i id="forDivisionOnly"></i></b> </p>
+        <br>
+        <br>
+        <input value="Submit" type="button" onmouseleave="mouseOverEventStart('mouseleave')" onmouseover="mouseOverEventStart('mouseover')" onclick="submit()" id="usersAnswerButton" />
+        <br>
+        <br>
+        <p>©️ Copyright 2022 Mathifun</p>
+    </div>
+    <div id="donateDiv" style="visibility:hidden">
+        <h1>Support the Developer</h1>
+        <p>To make more tools and fun games, I need money to pay for hosting. If you want to donate,</p> <a href="https://www.paypal.com/us/home">Click Here</a>
+        <br>
+        <br>
+        <button class="usersAnswerButton" onclick="donateDiv.style='visibility:hidden'; setTimeoutShowDonate=''">CLOSE</button>
+    </div>
+
+    
+</body>
+<script src="script.js"></script>
+<style>
+    body{
+        font-family: 'Nunito', sans-serif;
+
+    }
+    #donateDiv{
+        background: #7ddbd5;
+        position: absolute;
+        z-index: 1;
+        visibility: visible;
+        top: 33px;
+        position: absolute;
+        z-index: 200;
+        left: 26%;
+        height: 53%;
+        padding: 3px 17px;
+        font-size: 24px;
+        text-align: center;
+        width: 46%;
+    }
+    #problemNumScentence{
+        background-color: #eeeeee;
+        cursor: not-allowed;
+    }
+    .usersAnswerButton{
+        cursor: pointer;
+        left: 229px;
+        background-color: #e7f9ff;
+        width: 99px;
+        height: 36px;
+        border: solid grey 1px;
+        border-radius: 19px;
+    }
+    #usersAnswer{
+        width: 31px;
+        text-align: center;
+    }
+    #allDiv{
+        border: darkblue solid 6px;
+        padding: 16px;
+        text-align: center;
+        height: auto;
+        width: 644px;
+        left: 21%;
+        position: absolute;
+    }
+    
+    
+</style>
+
+</html>

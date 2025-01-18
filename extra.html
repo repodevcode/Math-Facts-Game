@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathifun - Learn all your facts in a fun way!</title>
+    <link rel="icon" type="image/x-icon" href="logo.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="div">
+    <h1>Mathifun Extra Practice</h1>
+    <input type="input" id="problemNumScentence" readonly/> <input value="?" onclick="val()" type="input"
+                                                                   id="usersAnswer"/>
+    <p><b><i id="forDivisionOnly">(If an answer is a decimal: do not put a remainder; Put the whole number
+        only.)</i></b></p>
+    <br>
+    <br>
+    <input value="Submit" type="button" onclick="submit()" id="usersAnswerButton"/>
+
+</div>
+<div id="feedback" style="visibility: hidden">
+    <h1>✔️Correct!</h1>
+    <h3>Keep it up!</h3>
+</div>
+<div class="div" id="guessGameDiv">
+    <h2> Guessing Corner </h2>
+    <h3 id="wordCount"></h3>
+    <div id="buttonDiv">
+        <button class="guessingLetterButtons" onclick="guess(this)">A</button>
+        <button class="guessingLetterButtons" onclick="guess(this)">B</button>
+        <button class="guessingLetterButtons" onclick="guess(this)">C</button>
+        <button class="guessingLetterButtons" onclick="guess(this)">D</button>
+        <button class="guessingLetterButtons" onclick="guess(this)">E</button>
+        <button class="guessingLetterButtons" onclick="guess(this)">F</button>
+        <button class="guessingLetterButtons" onclick="guess(this)">G</button>
+        <button class="guessingLetterButtons" onclick="guess(this)">H</button>
+        <button class="guessingLetterButtons" onclick="guess(this)">I</button>
+        <button class="guessingLetterButtons" onclick="guess(this)">J</button>
+        <button class="guessingLetterButtons" onclick="guess(this)">K</button>
+        <button class="guessingLetterButtons" onclick="guess(this)">L</button>
+        <button class="guessingLetterButtons" onclick="guess(this)">M</button>
+        <button class="guessingLetterButtons" onclick="guess(this)">N</button>
+        <button class="guessingLetterButtons" onclick="guess(this)">O</button>
+        <button class="guessingLetterButtons" onclick="guess(this)">P</button>
+        <button class="guessingLetterButtons" onclick="guess(this)">Q</button>
+        <button class="guessingLetterButtons" onclick="guess(this)">R</button>
+        <button class="guessingLetterButtons" onclick="guess(this)">S</button>
+        <button class="guessingLetterButtons" onclick="guess(this)">T</button>
+        <button class="guessingLetterButtons" onclick="guess(this)">U</button>
+        <button class="guessingLetterButtons" onclick="guess(this)">X</button>
+        <button class="guessingLetterButtons" onclick="guess(this)">Y</button>
+        <button class="guessingLetterButtons" onclick="guess(this)">Z</button>
+        <button class="guessingLetterButtons" onclick="guess(this)">V</button>
+        <button class="guessingLetterButtons" onclick="guess(this)">W</button>
+    </div>
+    <br>
+    <p>©️ Copyright 2022-2024 Mathifun</p>
+</div>
+<img id="trophey" src="trophey.png" draggable="false"/>
+<div class="confetti-container" style="
+    height: 100%;
+    position: absolute;
+    top: 1%;
+    visibility:hidden;"></div>
+<input onclick="location.href = 'finished.html'" type="button" class="endBtns" value="⬅️Back" />
+
+<input type="button" class="endBtns" onclick="location.href = 'certificate.html'" value="📃Receive Certificate" />
+</body>
+<script src="extra.js"></script>
+<style>
+    .endBtns {
+        visibility: hidden;
+        background-color: #27ae60;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        position: relative;
+        text-align: center;
+        left: 36%;
+        width: 191px;
+    }
+
+
+    .endBtns:hover {
+        background-color: #2ecc71;
+    }
+    body {
+        margin: 0;
+        overflow: hidden;
+    }
+
+    .confetti {
+        width: 5px;
+        height: 15px;
+        position: absolute;
+        background-color: #f00;
+        opacity: 0.7;
+        animation: confetti-fall linear infinite;
+    }
+
+    @keyframes confetti-fall {
+        0% {
+            transform: translateY(0) rotateZ(0deg);
+        }
+        100% {
+            transform: translateY(100vh) rotateZ(720deg);
+        }
+    }
+
+    #trophey {
+        visibility: hidden;
+        display: block;
+        width: 393px;
+        margin: auto;
+    }
+
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeOutAnimation {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .correctAnswer {
+        animation: fadeInAnimation ease 0.5s;
+        background: lightgreen;
+        width: 311px;
+        text-align: center;
+        height: 115px;
+        border: #328832 7px solid;
+        left: 415px;
+        position: absolute;
+        top: 169px;
+    }
+
+    .incorrectAnswer {
+        animation: fadeInAnimation ease 0.5s;
+        background: #ffe8e8;
+        width: 311px;
+        text-align: center;
+        height: 115px;
+        border: #d30000 7px solid;
+        left: 415px;
+        position: absolute;
+        top: 169px;
+    }
+
+    body {
+        font-family: 'Nunito', sans-serif;
+
+    }
+
+    #problemNumScentence {
+        background-color: #eeeeee;
+        cursor: not-allowed;
+        width: 12%;
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    #usersAnswer {
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 12px;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    #buttonDiv {
+        cursor: auto;
+    }
+
+    .guessingLetterButtons {
+        background-color: #3498db;
+        color: #fff;
+        margin: 1px 1px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-size: 11px;
+        padding: 10px 20px;
+    }
+
+    .guessingLetterButtons:hover {
+        background-color: #2980b9
+    }
+
+    #guessGameDiv {
+        top: 363px;
+        visibility: hidden;
+        cursor: url('questionMarkNew.png'), auto;
+    }
+
+    #problemNumScentence {
+        background-color: #eeeeee;
+        cursor: not-allowed;
+    }
+
+    #usersAnswerButton {
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    #usersAnswerButton:hover {
+        background-color: #2980b9;
+    }
+
+    #usersAnswer {
+        width: 31px;
+        text-align: center;
+    }
+
+    .div {
+        border: darkblue solid 6px;
+        padding: 16px;
+        text-align: center;
+        height: auto;
+        width: 644px;
+        left: 21%;
+        position: absolute;
+    }
+</style>
+</html>

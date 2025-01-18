@@ -1,0 +1,24 @@
+5 POINTS CHECK:
+
+
+either "A", "B", "OP"
+"0P12"
+random num between 1 and 6
+round #
+random num between 21 and 30
+current year
+number of minutes
+"035"
+
+
+--------------------------------------------------------------------------------------------
+ADVANCE TO NEW ROUND CHECK:
+
+
+"NRO"
+break time
+"P3+"
+round #
+"5"
+firstTime {true or false}
+"1441,01"

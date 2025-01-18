@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathifun Certificate</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Noto+Sans+JP&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="certificate">
+    <h1>Certificate of Completion</h1>
+    <p>This is to certify that</p>
+   <input onchange="typedName(this)" type="text" placeholder="Full Name">
+    <p id="nameText"></p>
+    <p>has successfully completed the Mathifun math facts course</p>
+    <p id="date"></p>
+    <br>
+    <button onclick="window.print()">🖨️Print</button>
+</div>
+<script>
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+
+    const d = new Date();
+
+    if(localStorage.getItem("round") != 4){
+        location.href = "index.html"
+    }
+    function typedName(el){
+        document.getElementById("nameText").innerText = el.value.toUpperCase()
+        el.remove()
+    }
+    document.getElementById("date").innerHTML = monthNames[d.getMonth()] +" "+d.getDate() + ", " + d.getFullYear()
+</script>
+<style>
+    button {
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    button:hover {
+        background-color: #2980b9;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+    }
+    #nameText{
+        font-family: 'Dancing Script', cursive;
+        color: blue;
+        font-size: 26px;
+    }
+    .certificate {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    input{
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    h1 {
+        color: #3498db;
+    }
+
+    h2 {
+        color: #e74c3c;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+</style>
+</body>
+</html>
